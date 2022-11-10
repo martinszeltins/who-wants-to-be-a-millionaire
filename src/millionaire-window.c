@@ -2,7 +2,7 @@
 
 struct _MillionaireWindow
 {
-    AdwApplicationWindow  parent_instance;
+    AdwApplicationWindow parent_instance;
 };
 
 G_DEFINE_FINAL_TYPE (MillionaireWindow, millionaire_window, ADW_TYPE_APPLICATION_WINDOW)
