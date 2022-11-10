@@ -1,6 +1,6 @@
 #include "config.h"
 #include <glib/gi18n.h>
-#include "millionaire-application.h"
+#include "include/millionaire-application.h"
  
 int main (int argc, char * argv[])
 {

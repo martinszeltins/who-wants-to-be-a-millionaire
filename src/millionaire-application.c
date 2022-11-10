@@ -1,6 +1,6 @@
 #include "config.h"
-#include "millionaire-window.h"
-#include "millionaire-application.h"
+#include "include/millionaire-window.h"
+#include "include/millionaire-application.h"
 
 struct _MillionaireApplication
 {

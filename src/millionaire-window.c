@@ -1,5 +1,5 @@
 #include "config.h"
-#include "millionaire-window.h"
+#include "include/millionaire-window.h"
 
 struct _MillionaireWindow
 {
