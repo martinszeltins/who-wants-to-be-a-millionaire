@@ -2,5 +2,6 @@
 <gresources>
     <gresource prefix="/lv/martinsz/millionaire">
         <file preprocess="xml-stripblanks">millionaire-window.ui</file>
+        <file>style.css</file>
     </gresource>
 </gresources>

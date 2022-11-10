@@ -19,6 +19,10 @@ static void millionaire_application_activate (GApplication * app)
 
     window = gtk_application_get_active_window (GTK_APPLICATION (app));
 
+    GtkCssProvider * css_provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_path (css_provider, "/home/martins/Programming/millionaire/src/style.css");
+    gtk_style_context_add_provider_for_display(gdk_display_get_default(), GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+
     if (window == NULL) {
         window = g_object_new (MILLIONAIRE_TYPE_WINDOW, "application", app, NULL);
     }
