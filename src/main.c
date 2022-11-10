@@ -4,6 +4,6 @@ int main (int argc, char * argv[])
 {
     g_autoptr(MillionaireApplication) app = NULL;
 
-    app = millionaire_application_new ("lv.martinsz.millionaire", G_APPLICATION_FLAGS_NONE);
+    app = millionaire_application_new ("lv.martinsz.millionaire", G_APPLICATION_DEFAULT_FLAGS);
     g_application_run (G_APPLICATION (app), argc, argv);
 }

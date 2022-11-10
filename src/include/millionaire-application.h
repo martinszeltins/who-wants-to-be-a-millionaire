@@ -8,6 +8,7 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (MillionaireApplication, millionaire_application, MILLIONAIRE, APPLICATION, AdwApplication)
 
-MillionaireApplication *millionaire_application_new (const char * application_id, GApplicationFlags flags);
+MillionaireApplication * millionaire_application_new (const char * application_id, GApplicationFlags flags);
+void                     millionaire_application_add_css_stylesheet (void);
 
 G_END_DECLS
