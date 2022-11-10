@@ -1,4 +1,3 @@
-#include "config.h"
 #include "include/millionaire-window.h"
 
 struct _MillionaireWindow
