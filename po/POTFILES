@@ -1,0 +1,6 @@
+data/lv.martinsz.millionaire.desktop.in
+data/lv.martinsz.millionaire.appdata.xml.in
+data/lv.martinsz.millionaire.gschema.xml
+src/main.c
+src/millionaire-window.c
+src/millionaire-window.ui

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="millionaire">
+	<schema id="lv.martinsz.millionaire" path="/lv/martinsz/millionaire/">
+	</schema>
+</schemalist>
