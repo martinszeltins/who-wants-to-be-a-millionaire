@@ -1,3 +1,5 @@
-* {
-    background-color: gray;
+window {
+    background-color: #000000;
+    background-image: url("../data/img/bg.png");
+    background-repeat: no-repeat;
 }

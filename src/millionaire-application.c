@@ -19,11 +19,14 @@ static void millionaire_application_activate (GApplication * app)
 
     window = gtk_application_get_active_window (GTK_APPLICATION (app));
 
+    millionaire_application_force_dark_scheme();
     millionaire_application_add_css_stylesheet();
 
     if (window == NULL) {
         window = g_object_new (MILLIONAIRE_TYPE_WINDOW, "application", app, NULL);
     }
+
+    gtk_window_set_resizable(window, FALSE);
 
     gtk_window_present (window);
 }
@@ -55,7 +58,13 @@ static void millionaire_application_init (MillionaireApplication * self)
 void millionaire_application_add_css_stylesheet ()
 {
     GtkCssProvider * css_provider = gtk_css_provider_new ();
-    
+
     gtk_css_provider_load_from_path (css_provider, "/home/martins/Programming/millionaire/src/style.css");
     gtk_style_context_add_provider_for_display(gdk_display_get_default(), GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+}
+
+void millionaire_application_force_dark_scheme ()
+{
+    AdwStyleManager * style_manager = adw_style_manager_get_default ();
+    adw_style_manager_set_color_scheme (style_manager, ADW_COLOR_SCHEME_FORCE_DARK);
 }

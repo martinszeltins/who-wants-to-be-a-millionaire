@@ -2,12 +2,14 @@ using Gtk 4.0;
 using Adw 1;
 
 template MillionaireWindow: Adw.ApplicationWindow {
-    default-width: 800;
-    default-height: 500;
+    default-width: 1298;
+    default-height: 720;
 
     Box {
         orientation: vertical;
 
-        HeaderBar header_bar {}
+        HeaderBar {
+            styles ["dark"]
+        }
     }
 }
