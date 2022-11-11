@@ -1,0 +1,91 @@
+using Gtk 4.0;
+using Adw 1;
+
+template MillionaireWindow : Adw.ApplicationWindow {
+    default-width: 1298;
+    default-height: 720;
+
+    Box {
+        orientation: vertical;
+
+        HeaderBar {
+            styles [
+                "dark",
+            ]
+        }
+
+        Fixed {
+            Button btn-answer-a {
+                can-focus: false;
+
+                Label {
+                    halign: start;
+                    label: "This will be the first answer - A";
+                }
+
+                styles [
+                    "btn-answer",
+                    "btn-answer-a",
+                ]
+
+                layout {
+                    transform: "translate(62, 526)";
+                }
+            }
+
+            Button btn-answer-b {
+                can-focus: false;
+
+                Label {
+                    halign: start;
+                    label: "This will be the second answer - B";
+                }
+
+                styles [
+                    "btn-answer",
+                    "btn-answer-b",
+                ]
+
+                layout {
+                    transform: "translate(654, 526)";
+                }
+            }
+
+            Button btn-answer-c {
+                can-focus: false;
+
+                Label {
+                    halign: start;
+                    label: "This will be the third answer - C";
+                }
+
+                styles [
+                    "btn-answer",
+                    "btn-answer-c",
+                ]
+
+                layout {
+                    transform: "translate(62, 594)";
+                }
+            }
+
+            Button btn-answer-d {
+                can-focus: false;
+
+                Label {
+                    halign: start;
+                    label: "This will be the fourth answer - D";
+                }
+
+                styles [
+                    "btn-answer",
+                    "btn-answer-d",
+                ]
+
+                layout {
+                    transform: "translate(654, 594)";
+                }
+            }
+        }
+    }
+}
