@@ -8,14 +8,20 @@ template MillionaireWindow : Adw.ApplicationWindow {
     Box {
         orientation: vertical;
 
-        HeaderBar {
-            styles [
-                "dark",
-            ]
-        }
+        HeaderBar { }
 
         Fixed {
-            Button btn-answer-a {
+            Label lbl_question {
+                label: "What name is given to the revolving belt machinery in an airport that delivers checked luggage \n from the plane to baggage reclaim?";
+                justify: center;
+                styles ["question"]
+
+                layout {
+                    transform: "translate(100, 424)";
+                }
+            }
+
+            Button btn_answer_a {
                 can-focus: false;
 
                 Label {
@@ -33,7 +39,7 @@ template MillionaireWindow : Adw.ApplicationWindow {
                 }
             }
 
-            Button btn-answer-b {
+            Button btn_answer_b {
                 can-focus: false;
 
                 Label {
@@ -51,7 +57,7 @@ template MillionaireWindow : Adw.ApplicationWindow {
                 }
             }
 
-            Button btn-answer-c {
+            Button btn_answer_c {
                 can-focus: false;
 
                 Label {
@@ -69,7 +75,7 @@ template MillionaireWindow : Adw.ApplicationWindow {
                 }
             }
 
-            Button btn-answer-d {
+            Button btn_answer_d {
                 can-focus: false;
 
                 Label {
