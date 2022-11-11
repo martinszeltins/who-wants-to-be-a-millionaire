@@ -18,3 +18,20 @@ static void millionaire_window_init (MillionaireWindow * self)
 {
     gtk_widget_init_template (GTK_WIDGET (self));
 }
+
+void millionaire_window_create_and_show (GApplication * app)
+{
+    GtkWindow * window;
+
+    window = gtk_application_get_active_window (GTK_APPLICATION (app));
+
+    if (window == NULL) {
+        window = g_object_new (MILLIONAIRE_TYPE_WINDOW, "application", app, NULL);
+    }
+
+    gtk_window_set_resizable(window, FALSE);
+
+    gtk_window_present (window);
+}
+
+

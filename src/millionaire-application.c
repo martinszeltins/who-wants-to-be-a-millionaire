@@ -15,20 +15,9 @@ MillionaireApplication * millionaire_application_new (const char * application_i
 
 static void millionaire_application_activate (GApplication * app)
 {
-    GtkWindow * window;
-
-    window = gtk_application_get_active_window (GTK_APPLICATION (app));
-
     millionaire_application_force_dark_scheme();
     millionaire_application_add_css_stylesheet();
-
-    if (window == NULL) {
-        window = g_object_new (MILLIONAIRE_TYPE_WINDOW, "application", app, NULL);
-    }
-
-    gtk_window_set_resizable(window, FALSE);
-
-    gtk_window_present (window);
+    millionaire_window_create_and_show(app);
 }
 
 static void millionaire_application_class_init (MillionaireApplicationClass * klass)
