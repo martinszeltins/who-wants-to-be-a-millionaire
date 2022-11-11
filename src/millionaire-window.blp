@@ -11,6 +11,36 @@ template MillionaireWindow : Adw.ApplicationWindow {
         HeaderBar { }
 
         Fixed {
+            Button btn_fifty_fifty {
+                can-focus: false;
+
+                styles ["btn-lifeline", "btn-lifeline-fifty-fifty"]
+
+                layout {
+                    transform: "translate(80, 40)";
+                }
+            }
+
+            Button btn_call {
+                can-focus: false;
+
+                styles ["btn-lifeline", "btn-lifeline-call"]
+
+                layout {
+                    transform: "translate(200, 40)";
+                }
+            }
+
+            Button btn_audience {
+                can-focus: false;
+
+                styles ["btn-lifeline", "btn-lifeline-audience"]
+
+                layout {
+                    transform: "translate(320, 40)";
+                }
+            }
+
             Label lbl_question {
                 label: "What name is given to the revolving belt machinery in an airport that delivers checked luggage \n from the plane to baggage reclaim?";
                 justify: center;
@@ -29,10 +59,7 @@ template MillionaireWindow : Adw.ApplicationWindow {
                     label: "This will be the first answer - A";
                 }
 
-                styles [
-                    "btn-answer",
-                    "btn-answer-a",
-                ]
+                styles ["btn-answer", "btn-answer-a"]
 
                 layout {
                     transform: "translate(62, 526)";
@@ -47,10 +74,7 @@ template MillionaireWindow : Adw.ApplicationWindow {
                     label: "This will be the second answer - B";
                 }
 
-                styles [
-                    "btn-answer",
-                    "btn-answer-b",
-                ]
+                styles ["btn-answer", "btn-answer-b"]
 
                 layout {
                     transform: "translate(654, 526)";
@@ -65,10 +89,7 @@ template MillionaireWindow : Adw.ApplicationWindow {
                     label: "This will be the third answer - C";
                 }
 
-                styles [
-                    "btn-answer",
-                    "btn-answer-c",
-                ]
+                styles ["btn-answer", "btn-answer-c"]
 
                 layout {
                     transform: "translate(62, 594)";
@@ -83,10 +104,7 @@ template MillionaireWindow : Adw.ApplicationWindow {
                     label: "This will be the fourth answer - D";
                 }
 
-                styles [
-                    "btn-answer",
-                    "btn-answer-d",
-                ]
+                styles ["btn-answer", "btn-answer-d"]
 
                 layout {
                     transform: "translate(654, 594)";

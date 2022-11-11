@@ -4,6 +4,36 @@ window {
     background-repeat: no-repeat;
 }
 
+/* Lifeline buttons */
+.btn-lifeline {
+    background-color: transparent;
+    min-width: 101px;
+    min-height: 61px;
+    padding: 0;
+    background-repeat: no-repeat;
+}
+
+.btn-lifeline:hover {
+    filter: brightness(1.1);
+}
+
+.btn-lifeline:hover:active {
+    filter: brightness(0.9);
+}
+
+.btn-lifeline-fifty-fifty {
+    background-image: url("../data/img/btn-50-50.png");
+}
+
+.btn-lifeline-call {
+    background-image: url("../data/img/btn-call.png");
+}
+
+.btn-lifeline-audience {
+    background-image: url("../data/img/btn-audience.png");
+}
+
+
 /* Question */
 .question {
     font-size: 24px;
@@ -17,6 +47,10 @@ window {
     min-width: 592px;
     min-height: 60px;
     padding: 0px;
+}
+
+.btn-answer:hover:active {
+    filter: brightness(0.9);
 }
 
 .btn-answer label {
