@@ -3,3 +3,26 @@ window {
     background-image: url("../data/img/bg.png");
     background-repeat: no-repeat;
 }
+
+.btn-answer {
+    background-color: transparent;
+    min-width: 592px;
+    min-height: 60px;
+    padding: 0px;
+}
+
+.btn-answer label {
+    font-size: 20px;
+    padding-left: 90px;
+    opacity: 0.85;
+}
+
+.btn-answer-a {
+    background-image: url("../data/img/answer-a-default.png");
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.btn-answer-a:hover {
+    background-image: url("../data/img/answer-a-yellow.png");
+}

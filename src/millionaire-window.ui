@@ -10,6 +10,7 @@
             <object class="GtkBox">
                 <property name="orientation">vertical</property>
 
+                <!-- Headerbar -->
                 <child>
                     <object class="GtkHeaderBar">
                         <style>
@@ -20,18 +21,27 @@
 
                 <child>
                     <object class="GtkFixed">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-
+                        <!-- Answer A -->
                         <child>
-                            <object class="GtkButton">
-                                <property name="label">hello</property>
+                            <object class="GtkButton" id="btn-answer-a">
+                                <property name="can-focus">False</property>
+
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="halign">start</property>
+                                        <property name="label">This will be the first answer - A</property>
+                                    </object>
+                                </child>
+
+                                <style>
+                                    <class name="btn-answer" />
+                                    <class name="btn-answer-a" />
+                                </style>
 
                                 <layout>
-                                    <property name="transform">translate(100, 200)</property>
+                                    <property name="transform">translate(62, 526)</property>
                                 </layout>
                             </object>
-                            
                         </child>
                     </object>
                 </child>
