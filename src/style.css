@@ -33,6 +33,12 @@ window {
     background-image: url("../data/img/btn-audience.png");
 }
 
+/* Money */
+.lbl-money {
+    font-size: 40px;
+    font-weight: bold;
+    min-width: 210px;
+}
 
 /* Question */
 .question {

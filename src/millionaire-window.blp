@@ -12,6 +12,16 @@ template MillionaireWindow : Adw.ApplicationWindow {
         HeaderBar { }
 
         Fixed {
+            Label lbl_money {
+                label: "$1,000,000";
+                xalign: 1;
+                styles ["lbl-money"]
+
+                layout {
+                    transform: "translate(1020, 45)";
+                }
+            }
+
             Button btn_fifty_fifty {
                 can-focus: false;
 
