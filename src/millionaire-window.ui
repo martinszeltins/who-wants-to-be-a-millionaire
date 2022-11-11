@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <requires lib="gtk" version="4.0" />
+
+    <template class="MillionaireWindow" parent="AdwApplicationWindow">
+        <property name="default-width">1298</property>
+        <property name="default-height">720</property>
+
+        <child>
+            <object class="GtkBox">
+                <property name="orientation">vertical</property>
+
+                <child>
+                    <object class="GtkHeaderBar">
+                        <style>
+                            <class name="dark" />
+                        </style>
+                    </object>
+                </child>
+
+                <child>
+                    <object class="GtkFixed">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+
+                        <child>
+                            <object class="GtkButton">
+                                <property name="label">hello</property>
+
+                                <layout>
+                                    <property name="transform">translate(100, 200)</property>
+                                </layout>
+                            </object>
+                            
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </template>
+</interface>
