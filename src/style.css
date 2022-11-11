@@ -15,14 +15,38 @@ window {
     font-size: 20px;
     padding-left: 90px;
     opacity: 0.85;
-}
-
-.btn-answer-a {
-    background-image: url("../data/img/answer-a-default.png");
     background-repeat: no-repeat;
     color: white;
 }
 
+.btn-answer-a {
+    background-image: url("../data/img/answer-a-default.png");
+}
+
 .btn-answer-a:hover {
     background-image: url("../data/img/answer-a-yellow.png");
+}
+
+.btn-answer-b {
+    background-image: url("../data/img/answer-b-default.png");
+}
+
+.btn-answer-b:hover {
+    background-image: url("../data/img/answer-b-yellow.png");
+}
+
+.btn-answer-c {
+    background-image: url("../data/img/answer-c-default.png");
+}
+
+.btn-answer-c:hover {
+    background-image: url("../data/img/answer-c-yellow.png");
+}
+
+.btn-answer-d {
+    background-image: url("../data/img/answer-d-default.png");
+}
+
+.btn-answer-d:hover {
+    background-image: url("../data/img/answer-d-yellow.png");
 }
