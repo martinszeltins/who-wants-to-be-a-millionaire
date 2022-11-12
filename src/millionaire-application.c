@@ -18,8 +18,7 @@ static void millionaire_application_activate (GApplication * app)
 {
     millionaire_application_force_dark_scheme();
     millionaire_application_add_css_stylesheet();
-    GtkWindow * window = millionaire_window_create_and_show(app);
-    millionaire_gameplay_start(app, window);
+    millionaire_window_create_and_show(app);
 }
 
 static void millionaire_application_class_init (MillionaireApplicationClass * klass)

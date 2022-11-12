@@ -8,6 +8,6 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (MillionaireWindow, millionaire_window, MILLIONAIRE, WINDOW, AdwApplicationWindow)
 
-GtkWindow * millionaire_window_create_and_show (GApplication * app);
+void millionaire_window_create_and_show (GApplication * app);
 
 G_END_DECLS
