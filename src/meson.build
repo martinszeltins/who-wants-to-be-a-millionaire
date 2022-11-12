@@ -1,6 +1,7 @@
 millionaire_sources = [
     'main.c',
     'millionaire-application.c',
+    'millionaire-gameplay.c',
     'millionaire-window.c',
 ]
 

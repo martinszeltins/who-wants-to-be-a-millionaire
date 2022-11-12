@@ -1,4 +1,5 @@
 #include "include/millionaire-window.h"
+#include "include/millionaire-gameplay.h"
 #include "include/millionaire-application.h"
 
 struct _MillionaireApplication
@@ -17,7 +18,8 @@ static void millionaire_application_activate (GApplication * app)
 {
     millionaire_application_force_dark_scheme();
     millionaire_application_add_css_stylesheet();
-    millionaire_window_create_and_show(app);
+    GtkWindow * window = millionaire_window_create_and_show(app);
+    millionaire_gameplay_start(app, window);
 }
 
 static void millionaire_application_class_init (MillionaireApplicationClass * klass)

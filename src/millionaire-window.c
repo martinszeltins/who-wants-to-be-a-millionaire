@@ -19,7 +19,7 @@ static void millionaire_window_init (MillionaireWindow * self)
     gtk_widget_init_template (GTK_WIDGET (self));
 }
 
-void millionaire_window_create_and_show (GApplication * app)
+GtkWindow * millionaire_window_create_and_show (GApplication * app)
 {
     GtkWindow * window;
 
@@ -32,6 +32,8 @@ void millionaire_window_create_and_show (GApplication * app)
     gtk_window_set_resizable(window, FALSE);
 
     gtk_window_present (window);
+
+    return window;
 }
 
 
