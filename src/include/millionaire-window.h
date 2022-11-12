@@ -20,5 +20,6 @@ struct question {
 };
 
 void millionaire_window_create_and_show (GApplication * app);
+void millionaire_window_gameplay_start(MillionaireWindow * window);
 
 G_END_DECLS
