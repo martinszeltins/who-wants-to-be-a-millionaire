@@ -4,6 +4,8 @@ struct _MillionaireWindow
 {
     AdwApplicationWindow parent_instance;
     GtkLabel *           lbl_money;
+    int                  current_question;
+    struct question      questions[10];
 };
 
 GApplication * app_instance;
