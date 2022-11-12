@@ -1,5 +1,4 @@
 #include "include/millionaire-window.h"
-#include "include/millionaire-gameplay.h"
 
 struct _MillionaireWindow
 {
@@ -22,8 +21,6 @@ static void millionaire_window_class_init (MillionaireWindowClass * klass)
 static void millionaire_window_init (MillionaireWindow * self)
 {
     gtk_widget_init_template (GTK_WIDGET (self));
-    gtk_label_set_text(self->lbl_money, "It works here!!!!!!");
-    millionaire_gameplay_start(app_instance, self);
 }
 
 void millionaire_window_create_and_show (GApplication * app)

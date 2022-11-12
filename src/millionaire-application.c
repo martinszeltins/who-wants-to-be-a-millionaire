@@ -1,5 +1,4 @@
 #include "include/millionaire-window.h"
-#include "include/millionaire-gameplay.h"
 #include "include/millionaire-application.h"
 
 struct _MillionaireApplication
