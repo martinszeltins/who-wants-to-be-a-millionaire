@@ -3,9 +3,17 @@
 struct _MillionaireWindow
 {
     AdwApplicationWindow parent_instance;
-    GtkLabel *           lbl_money;
     int                  current_question;
     struct question      questions[10];
+    GtkLabel *           lbl_money;
+    GtkButton *          btn_fifty_fifty;
+    GtkButton *          btn_call;
+    GtkButton *          btn_audience;
+    GtkLabel *           lbl_question;
+    GtkButton *          btn_answer_a;
+    GtkButton *          btn_answer_b;
+    GtkButton *          btn_answer_c;
+    GtkButton *          btn_answer_d;
 };
 
 GApplication * app_instance;
@@ -18,6 +26,14 @@ static void millionaire_window_class_init (MillionaireWindowClass * klass)
 
     gtk_widget_class_set_template_from_resource (widget_class, "/lv/martinsz/millionaire/millionaire-window.ui");
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_money);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_fifty_fifty);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_call);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_audience);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_question);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_answer_a);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_answer_b);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_answer_c);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_answer_d);
 }
 
 static void millionaire_window_init (MillionaireWindow * self)
