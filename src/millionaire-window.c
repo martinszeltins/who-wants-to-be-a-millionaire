@@ -14,6 +14,10 @@ struct _MillionaireWindow
     GtkButton *          btn_answer_b;
     GtkButton *          btn_answer_c;
     GtkButton *          btn_answer_d;
+    GtkLabel *           lbl_answer_a;
+    GtkLabel *           lbl_answer_b;
+    GtkLabel *           lbl_answer_c;
+    GtkLabel *           lbl_answer_d;
 };
 
 GApplication * app_instance;
@@ -34,6 +38,10 @@ static void millionaire_window_class_init (MillionaireWindowClass * klass)
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_answer_b);
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_answer_c);
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_answer_d);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_a);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_b);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_c);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_d);
 }
 
 static void millionaire_window_init (MillionaireWindow * self)
@@ -188,9 +196,9 @@ void millionaire_window_gameplay_start(MillionaireWindow * self)
     gtk_label_set_text(self->lbl_money, "$0");
 
     gtk_label_set_text(self->lbl_question, self->questions[self->current_question].question);
-    gtk_button_set_label(self->btn_answer_a, self->questions[self->current_question].answers[0]);
-    gtk_button_set_label(self->btn_answer_b, self->questions[self->current_question].answers[1]);
-    gtk_button_set_label(self->btn_answer_c, self->questions[self->current_question].answers[2]);
-    gtk_button_set_label(self->btn_answer_d, self->questions[self->current_question].answers[3]);
+    gtk_label_set_text(self->lbl_answer_a, self->questions[self->current_question].answers[0]);
+    gtk_label_set_text(self->lbl_answer_b, self->questions[self->current_question].answers[1]);
+    gtk_label_set_text(self->lbl_answer_c, self->questions[self->current_question].answers[2]);
+    gtk_label_set_text(self->lbl_answer_d, self->questions[self->current_question].answers[3]);
 }
 
