@@ -8,5 +8,5 @@ The codebase could be much improved by moving the main game logic into its own G
 
 The game also uses GTK Fixed widget and a fixed window size. This could also be improved by moving to a more responsive layout like GTK Grid.
 
-Screenshot:
+**Screenshot**:
 <img src="https://i.ibb.co/r3jzZtn/millionairescreshot.png" />
