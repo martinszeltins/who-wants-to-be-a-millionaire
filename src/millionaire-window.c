@@ -225,11 +225,11 @@ void millionaire_window_gameplay_answer_a(GtkWidget * widget, gpointer data)
     GtkStyleContext * context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_class(context, "btn-answer-pulse");
 
-    struct MyParameters params;
-    params.widget = widget;
-    params.window = window;
+    struct MyParameters * params = malloc(sizeof(struct MyParameters));
+    params->widget = widget;
+    params->window = window;
 
-    window->timer = g_timeout_add(1000, millionaire_window_gameplay_answer_a_check, &params);
+    window->timer = g_timeout_add(1000, millionaire_window_gameplay_answer_a_check, params);
 }
 
 gboolean millionaire_window_gameplay_answer_a_check(gpointer user_data)
