@@ -23,6 +23,11 @@ struct _MillionaireWindow
     GtkLabel *           lbl_answer_d;
 };
 
+struct MyParameters {
+    GtkWidget * widget;
+    MillionaireWindow * window;
+}; 
+
 GApplication * app_instance;
 
 G_DEFINE_FINAL_TYPE (MillionaireWindow, millionaire_window, ADW_TYPE_APPLICATION_WINDOW)
@@ -209,14 +214,6 @@ void millionaire_window_gameplay_start(MillionaireWindow * self)
     gtk_label_set_text(self->lbl_answer_d, self->questions[self->current_question].answers[3]);
 }
 
-gboolean millionaire_window_gameplay_timer(gpointer user_data)
-{
-    g_print("called inside millionaire_window_gameplay_timer");
-
-    /* Returning FALSE here will stop the timer */
-    return TRUE;
-}
-
 void millionaire_window_gameplay_answer_a(GtkWidget * widget, gpointer data)
 {
     MillionaireWindow * window = MILLIONAIRE_WINDOW(data);
@@ -228,9 +225,24 @@ void millionaire_window_gameplay_answer_a(GtkWidget * widget, gpointer data)
     GtkStyleContext * context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_class(context, "btn-answer-pulse");
 
-    window->timer = g_timeout_add(5000, millionaire_window_gameplay_timer, NULL);
+    struct MyParameters params;
+    params.widget = widget;
+    params.window = window;
 
-    g_print("after timeout add - 1");
-    g_print("after timeout add - 2");
+    window->timer = g_timeout_add(1000, millionaire_window_gameplay_answer_a_check, &params);
 }
 
+gboolean millionaire_window_gameplay_answer_a_check(gpointer user_data)
+{
+    g_print("millionaire_window_gameplay_answer_a_check()");
+
+    struct MyParameters * params = (struct MyParameters *) user_data;
+
+    MillionaireWindow * window = MILLIONAIRE_WINDOW(params->window);
+
+    g_print("gtk_label_set_text()");
+    gtk_label_set_text(window->lbl_money, "$1,000,000");
+
+    /* Returning FALSE here will stop the timer */
+    return FALSE;
+}
