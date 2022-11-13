@@ -3,8 +3,11 @@
 struct _MillionaireWindow
 {
     AdwApplicationWindow parent_instance;
+    guint                timer;
+    guint                timer_value;
     int                  current_question;
     struct question      questions[10];
+    gboolean             game_locked;
     GtkLabel *           lbl_money;
     GtkButton *          btn_fifty_fifty;
     GtkButton *          btn_call;
@@ -47,6 +50,8 @@ static void millionaire_window_class_init (MillionaireWindowClass * klass)
 static void millionaire_window_init (MillionaireWindow * self)
 {
     gtk_widget_init_template (GTK_WIDGET (self));
+    g_signal_connect(self->btn_answer_a, "clicked", G_CALLBACK(millionaire_window_gameplay_answer_a), self);
+
     millionaire_window_gameplay_start(self);
 }
 
@@ -67,7 +72,9 @@ void millionaire_window_create_and_show (GApplication * app)
 
 void millionaire_window_gameplay_start(MillionaireWindow * self)
 {
+    self->timer = 0;
     self->current_question = 0;
+    self->game_locked = FALSE;
 
     strcpy(self->questions[0].question, "Which of these names is not in the title of a Shakespeare play?");
     strcpy(self->questions[0].answers[0], "Hamlet");
@@ -200,5 +207,30 @@ void millionaire_window_gameplay_start(MillionaireWindow * self)
     gtk_label_set_text(self->lbl_answer_b, self->questions[self->current_question].answers[1]);
     gtk_label_set_text(self->lbl_answer_c, self->questions[self->current_question].answers[2]);
     gtk_label_set_text(self->lbl_answer_d, self->questions[self->current_question].answers[3]);
+}
+
+gboolean millionaire_window_gameplay_timer(gpointer user_data)
+{
+    g_print("called inside millionaire_window_gameplay_timer");
+
+    /* Returning FALSE here will stop the timer */
+    return TRUE;
+}
+
+void millionaire_window_gameplay_answer_a(GtkWidget * widget, gpointer data)
+{
+    MillionaireWindow * window = MILLIONAIRE_WINDOW(data);
+
+    if (window->game_locked == TRUE) return;
+
+    window->game_locked = TRUE;
+
+    GtkStyleContext * context = gtk_widget_get_style_context(widget);
+    gtk_style_context_add_class(context, "btn-answer-pulse");
+
+    window->timer = g_timeout_add(5000, millionaire_window_gameplay_timer, NULL);
+
+    g_print("after timeout add - 1");
+    g_print("after timeout add - 2");
 }
 

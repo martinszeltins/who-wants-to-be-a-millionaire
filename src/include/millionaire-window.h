@@ -20,6 +20,8 @@ struct question {
 };
 
 void millionaire_window_create_and_show (GApplication * app);
-void millionaire_window_gameplay_start(MillionaireWindow * window);
+void millionaire_window_gameplay_start (MillionaireWindow * window);
+void millionaire_window_gameplay_answer_a (GtkWidget * widget, gpointer data);
+gboolean millionaire_window_gameplay_timer(gpointer user_data);
 
 G_END_DECLS

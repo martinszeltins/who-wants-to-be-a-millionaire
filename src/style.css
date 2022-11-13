@@ -71,7 +71,8 @@ window {
     background-image: url("../data/img/answer-a-default.png");
 }
 
-.btn-answer-a:hover {
+.btn-answer-a:hover,
+.btn-answer-a.btn-answer-pulse {
     background-image: url("../data/img/answer-a-yellow.png");
 }
 
@@ -79,7 +80,8 @@ window {
     background-image: url("../data/img/answer-b-default.png");
 }
 
-.btn-answer-b:hover {
+.btn-answer-b:hover,
+.btn-answer-b.btn-answer-pulse {
     background-image: url("../data/img/answer-b-yellow.png");
 }
 
@@ -87,7 +89,8 @@ window {
     background-image: url("../data/img/answer-c-default.png");
 }
 
-.btn-answer-c:hover {
+.btn-answer-c:hover,
+.btn-answer-c.btn-answer-pulse {
     background-image: url("../data/img/answer-c-yellow.png");
 }
 
@@ -95,6 +98,27 @@ window {
     background-image: url("../data/img/answer-d-default.png");
 }
 
-.btn-answer-d:hover {
+.btn-answer-d:hover,
+.btn-answer-d.btn-answer-pulse {
     background-image: url("../data/img/answer-d-yellow.png");
+}
+
+.btn-answer-pulse {
+    animation-name: answer-pulse;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes answer-pulse {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(0.7);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
 }
