@@ -180,5 +180,17 @@ void millionaire_window_gameplay_start(MillionaireWindow * self)
     strcpy(self->questions[9].lifeline_fifty_fifty_hide[1], "A");
     strcpy(self->questions[9].lifeline_call_answer, "It's definitely a heart murmur. Just kidding, I think derma means skin.");
     strcpy(self->questions[9].lifeline_audience_answer, "The audience has voted:\nA: 19%\nB: 28%\nC: 14%\nD: 58%");
+
+    gtk_widget_set_visible(GTK_WIDGET(self->btn_fifty_fifty), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(self->btn_call), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(self->btn_audience), TRUE);
+
+    gtk_label_set_text(self->lbl_money, "$0");
+
+    gtk_label_set_text(self->lbl_question, self->questions[self->current_question].question);
+    gtk_button_set_label(self->btn_answer_a, self->questions[self->current_question].answers[0]);
+    gtk_button_set_label(self->btn_answer_b, self->questions[self->current_question].answers[1]);
+    gtk_button_set_label(self->btn_answer_c, self->questions[self->current_question].answers[2]);
+    gtk_button_set_label(self->btn_answer_d, self->questions[self->current_question].answers[3]);
 }
 
