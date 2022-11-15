@@ -48,7 +48,7 @@ void millionaire_application_add_css_stylesheet ()
 {
     GtkCssProvider * css_provider = gtk_css_provider_new ();
 
-    gtk_css_provider_load_from_path (css_provider, "/home/martins/Programming/millionaire/src/style.css");
+    gtk_css_provider_load_from_resource (css_provider, "/lv/martinsz/millionaire/style.css");
     gtk_style_context_add_provider_for_display(gdk_display_get_default(), GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
 }
 

@@ -1,6 +1,6 @@
 window {
     background-color: #000000;
-    background-image: url("../data/img/bg.png");
+    background-image: url("img/bg.png");
     background-repeat: no-repeat;
 }
 
@@ -22,15 +22,15 @@ window {
 }
 
 .btn-lifeline-fifty-fifty {
-    background-image: url("../data/img/btn-50-50.png");
+    background-image: url("img/btn-50-50.png");
 }
 
 .btn-lifeline-call {
-    background-image: url("../data/img/btn-call.png");
+    background-image: url("img/btn-call.png");
 }
 
 .btn-lifeline-audience {
-    background-image: url("../data/img/btn-audience.png");
+    background-image: url("img/btn-audience.png");
 }
 
 /* Money */
@@ -68,39 +68,39 @@ window {
 }
 
 .btn-answer-a {
-    background-image: url("../data/img/answer-a-default.png");
+    background-image: url("img/answer-a-default.png");
 }
 
 .btn-answer-a:hover,
 .btn-answer-a.btn-answer-pulse {
-    background-image: url("../data/img/answer-a-yellow.png");
+    background-image: url("img/answer-a-yellow.png");
 }
 
 .btn-answer-b {
-    background-image: url("../data/img/answer-b-default.png");
+    background-image: url("img/answer-b-default.png");
 }
 
 .btn-answer-b:hover,
 .btn-answer-b.btn-answer-pulse {
-    background-image: url("../data/img/answer-b-yellow.png");
+    background-image: url("img/answer-b-yellow.png");
 }
 
 .btn-answer-c {
-    background-image: url("../data/img/answer-c-default.png");
+    background-image: url("img/answer-c-default.png");
 }
 
 .btn-answer-c:hover,
 .btn-answer-c.btn-answer-pulse {
-    background-image: url("../data/img/answer-c-yellow.png");
+    background-image: url("img/answer-c-yellow.png");
 }
 
 .btn-answer-d {
-    background-image: url("../data/img/answer-d-default.png");
+    background-image: url("img/answer-d-default.png");
 }
 
 .btn-answer-d:hover,
 .btn-answer-d.btn-answer-pulse {
-    background-image: url("../data/img/answer-d-yellow.png");
+    background-image: url("img/answer-d-yellow.png");
 }
 
 .btn-answer-pulse {

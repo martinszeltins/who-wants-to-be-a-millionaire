@@ -36,7 +36,7 @@ static void millionaire_window_class_init (MillionaireWindowClass * klass)
 {
     GtkWidgetClass * widget_class = GTK_WIDGET_CLASS (klass);
 
-    gtk_widget_class_set_template_from_resource (widget_class, "/lv/martinsz/millionaire/millionaire-window.ui");
+    gtk_widget_class_set_template_from_resource (widget_class, "/lv/martinsz/millionaire/ui/millionaire-window.ui");
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_money);
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_fifty_fifty);
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, btn_call);
