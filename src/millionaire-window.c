@@ -23,7 +23,7 @@ struct _MillionaireWindow
     GtkLabel *           lbl_answer_d;
 };
 
-struct MyParameters {
+struct ParamWidgetWindow {
     GtkWidget * widget;
     MillionaireWindow * window;
 }; 
@@ -225,18 +225,19 @@ void millionaire_window_gameplay_answer_a(GtkWidget * widget, gpointer data)
     GtkStyleContext * context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_class(context, "btn-answer-pulse");
 
-    struct MyParameters * params = malloc(sizeof(struct MyParameters));
+    // We need to pass 2 values so let's create a struct for that.
+    struct ParamWidgetWindow * params = malloc(sizeof(struct ParamWidgetWindow));
     params->widget = widget;
     params->window = window;
 
-    window->timer = g_timeout_add(1000, millionaire_window_gameplay_answer_a_check, params);
+    window->timer = g_timeout_add(2000, millionaire_window_gameplay_answer_a_check, params);
 }
 
 gboolean millionaire_window_gameplay_answer_a_check(gpointer user_data)
 {
     g_print("millionaire_window_gameplay_answer_a_check()");
 
-    struct MyParameters * params = (struct MyParameters *) user_data;
+    struct ParamWidgetWindow * params = (struct ParamWidgetWindow *) user_data;
 
     MillionaireWindow * window = MILLIONAIRE_WINDOW(params->window);
 
