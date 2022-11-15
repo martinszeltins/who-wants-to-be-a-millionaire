@@ -7,7 +7,7 @@ blueprints = custom_target('blueprints',
     command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
-milresources += gnome.compile_resources('millionaire-resources',
+millionaire_resources += gnome.compile_resources('millionaire-resources',
     'millionaire.gresource.xml',
     dependencies: blueprints,
     c_name: 'millionaire',

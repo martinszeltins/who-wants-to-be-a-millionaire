@@ -3,7 +3,7 @@ millionaire_deps = [
     dependency('libadwaita-1'),
 ]
 
-millionaire_sources = milresources
+millionaire_sources = millionaire_resources
 millionaire_sources += [
     'main.c',
     'millionaire-application.c',
