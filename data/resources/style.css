@@ -55,7 +55,7 @@ window {
     padding: 0px;
 }
 
-.btn-answer:hover:active {
+.btn-answer:hover:active:not(.btn-answer-pulse) {
     filter: brightness(0.9);
 }
 

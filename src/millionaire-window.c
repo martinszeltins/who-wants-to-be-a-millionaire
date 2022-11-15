@@ -23,9 +23,10 @@ struct _MillionaireWindow
     GtkLabel *           lbl_answer_d;
 };
 
-struct ParamWidgetWindow {
-    GtkWidget * widget;
+struct ParamBtnAnswer {
     MillionaireWindow * window;
+    GtkWidget *         widget;
+    gchar               answer[1];
 }; 
 
 GApplication * app_instance;
@@ -55,7 +56,17 @@ static void millionaire_window_class_init (MillionaireWindowClass * klass)
 static void millionaire_window_init (MillionaireWindow * self)
 {
     gtk_widget_init_template (GTK_WIDGET (self));
-    g_signal_connect(self->btn_answer_a, "clicked", G_CALLBACK(millionaire_window_gameplay_answer_a), self);
+
+    // Answer A clicked
+    struct ParamBtnAnswer * param_answer_a = malloc(sizeof(struct ParamBtnAnswer));
+    param_answer_a->window = self;
+    param_answer_a->widget = GTK_WIDGET(self->btn_answer_a);
+    strcpy(param_answer_a->answer, "A");
+    g_signal_connect(self->btn_answer_a, "clicked", G_CALLBACK(millionaire_window_gameplay_answer), param_answer_a);
+
+    // Answer B clicked (TODO)
+    // Answer C clicked (TODO)
+    // Answer D clicked (TODO)
 
     millionaire_window_gameplay_start(self);
 }
@@ -214,9 +225,11 @@ void millionaire_window_gameplay_start(MillionaireWindow * self)
     gtk_label_set_text(self->lbl_answer_d, self->questions[self->current_question].answers[3]);
 }
 
-void millionaire_window_gameplay_answer_a(GtkWidget * widget, gpointer data)
+void millionaire_window_gameplay_answer(GtkWidget * widget, gpointer data)
 {
-    MillionaireWindow * window = MILLIONAIRE_WINDOW(data);
+    struct ParamBtnAnswer * param_btn_answer = (struct ParamBtnAnswer *) data;
+
+    MillionaireWindow * window = MILLIONAIRE_WINDOW(param_btn_answer->window);
 
     if (window->game_locked == TRUE) return;
 
@@ -225,23 +238,16 @@ void millionaire_window_gameplay_answer_a(GtkWidget * widget, gpointer data)
     GtkStyleContext * context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_class(context, "btn-answer-pulse");
 
-    // We need to pass 2 values so let's create a struct for that.
-    struct ParamWidgetWindow * params = malloc(sizeof(struct ParamWidgetWindow));
-    params->widget = widget;
-    params->window = window;
-
-    window->timer = g_timeout_add(2000, millionaire_window_gameplay_answer_a_check, params);
+    window->timer = g_timeout_add(2000, millionaire_window_gameplay_answer_check, param_btn_answer);
 }
 
-gboolean millionaire_window_gameplay_answer_a_check(gpointer user_data)
+gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
 {
-    g_print("millionaire_window_gameplay_answer_a_check()");
+    struct ParamBtnAnswer * param_btn_answer = (struct ParamBtnAnswer *) user_data;
 
-    struct ParamWidgetWindow * params = (struct ParamWidgetWindow *) user_data;
+    MillionaireWindow * window = MILLIONAIRE_WINDOW(param_btn_answer->window);
 
-    MillionaireWindow * window = MILLIONAIRE_WINDOW(params->window);
-
-    g_print("gtk_label_set_text()");
+    printf("\n %s \n", param_btn_answer->answer);
     gtk_label_set_text(window->lbl_money, "$1,000,000");
 
     /* Returning FALSE here will stop the timer */
