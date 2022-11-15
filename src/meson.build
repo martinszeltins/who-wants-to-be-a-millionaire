@@ -10,7 +10,8 @@ millionaire_sources += [
     'millionaire-window.c',
 ]
 
-exec = executable('millionaire', millionaire_sources,
+exec = executable('millionaire',
+    millionaire_sources,
     dependencies: millionaire_deps,
     install: true,
 )
