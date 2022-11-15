@@ -4,6 +4,7 @@ project('millionaire', 'c',
   default_options: [ 'warning_level=2', 'werror=false', 'c_std=gnu11', ],
 )
 
+milresources = []
 i18n = import('i18n')
 gnome = import('gnome')
 cc = meson.get_compiler('c')
