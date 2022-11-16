@@ -161,9 +161,6 @@ gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
         millionaire_window_gameplay_answer_incorrect(user_data);
     }
 
-    printf("\n %s \n", param_btn_answer->answer);
-    gtk_label_set_text(window->lbl_money, "$1,000,000");
-
     return TRUE;
 }
 
