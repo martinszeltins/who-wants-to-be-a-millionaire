@@ -23,5 +23,7 @@ void millionaire_window_create_and_show (GApplication * app);
 void millionaire_window_gameplay_start (MillionaireWindow * window);
 void millionaire_window_gameplay_answer (GtkWidget * widget, gpointer data);
 gboolean millionaire_window_gameplay_answer_check(gpointer user_data);
+gboolean millionaire_window_gameplay_answer_correct(gpointer user_data);
+gboolean millionaire_window_gameplay_answer_incorrect(gpointer user_data);
 
 G_END_DECLS

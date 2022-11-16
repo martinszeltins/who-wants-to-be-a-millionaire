@@ -65,9 +65,26 @@ static void millionaire_window_init (MillionaireWindow * self)
     strcpy(param_answer_a->answer, "A");
     g_signal_connect(self->btn_answer_a, "clicked", G_CALLBACK(millionaire_window_gameplay_answer), param_answer_a);
 
-    // Answer B clicked (TODO)
-    // Answer C clicked (TODO)
-    // Answer D clicked (TODO)
+    // Answer B clicked
+    struct ParamBtnAnswer * param_answer_b = malloc(sizeof(struct ParamBtnAnswer));
+    param_answer_b->window = self;
+    param_answer_b->widget = GTK_WIDGET(self->btn_answer_b);
+    strcpy(param_answer_b->answer, "B");
+    g_signal_connect(self->btn_answer_b, "clicked", G_CALLBACK(millionaire_window_gameplay_answer), param_answer_b);
+
+    // Answer C clicked
+    struct ParamBtnAnswer * param_answer_c = malloc(sizeof(struct ParamBtnAnswer));
+    param_answer_c->window = self;
+    param_answer_c->widget = GTK_WIDGET(self->btn_answer_c);
+    strcpy(param_answer_c->answer, "C");
+    g_signal_connect(self->btn_answer_c, "clicked", G_CALLBACK(millionaire_window_gameplay_answer), param_answer_c);
+
+    // Answer D clicked
+    struct ParamBtnAnswer * param_answer_d = malloc(sizeof(struct ParamBtnAnswer));
+    param_answer_d->window = self;
+    param_answer_d->widget = GTK_WIDGET(self->btn_answer_d);
+    strcpy(param_answer_d->answer, "D");
+    g_signal_connect(self->btn_answer_d, "clicked", G_CALLBACK(millionaire_window_gameplay_answer), param_answer_d);
 
     millionaire_window_gameplay_start(self);
 }
@@ -134,15 +151,32 @@ gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
 
     MillionaireWindow * window = MILLIONAIRE_WINDOW(param_btn_answer->window);
 
+    // Stop the timer
+    g_source_remove(window->timer);
+    window->timer = 0;
+
     if (param_btn_answer->answer[0] == window->questions[window->current_question].correct_answer[0]) {
-        g_print("correct");
+        millionaire_window_gameplay_answer_correct(user_data);
     } else {
-        g_print("incorrect");
+        millionaire_window_gameplay_answer_incorrect(user_data);
     }
 
     printf("\n %s \n", param_btn_answer->answer);
     gtk_label_set_text(window->lbl_money, "$1,000,000");
 
-    /* Returning FALSE here will stop the timer */
-    return FALSE;
+    return TRUE;
+}
+
+gboolean millionaire_window_gameplay_answer_correct(gpointer user_data)
+{
+    g_print("millionaire_window_gameplay_answer_correct()");
+
+    return TRUE;
+}
+
+gboolean millionaire_window_gameplay_answer_incorrect(gpointer user_data)
+{
+    g_print("millionaire_window_gameplay_answer_incorrect()");
+
+    return TRUE;
 }
