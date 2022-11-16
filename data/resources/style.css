@@ -59,6 +59,14 @@ window {
     filter: brightness(0.9);
 }
 
+.btn-answer-correct {
+    background-image: url("img/answer-a-green.png");
+}
+
+.btn-answer-incorrect {
+    background-image: url("img/answer-a-red.png");
+}
+
 .btn-answer label {
     font-size: 20px;
     padding-left: 90px;

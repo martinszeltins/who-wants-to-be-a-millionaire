@@ -150,14 +150,37 @@ gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
     struct ParamBtnAnswer * param_btn_answer = (struct ParamBtnAnswer *) user_data;
 
     MillionaireWindow * window = MILLIONAIRE_WINDOW(param_btn_answer->window);
+    GtkStyleContext *   context = gtk_widget_get_style_context(param_btn_answer->widget);
 
     // Stop the timer
     g_source_remove(window->timer);
     window->timer = 0;
 
+    gtk_style_context_remove_class(context, "btn-answer-pulse");
+
     if (param_btn_answer->answer[0] == window->questions[window->current_question].correct_answer[0]) {
+        if (param_btn_answer->answer == 'A') {
+            gtk_style_context_add_class(context, "btn-answer-a-correct");
+        } else if (param_btn_answer->answer == 'B') {
+            gtk_style_context_add_class(context, "btn-answer-b-correct");
+        } else if (param_btn_answer->answer == 'C') {
+            gtk_style_context_add_class(context, "btn-answer-c-correct");
+        } else if (param_btn_answer->answer == 'D') {
+            gtk_style_context_add_class(context, "btn-answer-d-correct");
+        }
+
         millionaire_window_gameplay_answer_correct(user_data);
     } else {
+        if (param_btn_answer->answer == 'A') {
+            gtk_style_context_add_class(context, "btn-answer-a-incorrect");
+        } else if (param_btn_answer->answer == 'B') {
+            gtk_style_context_add_class(context, "btn-answer-b-incorrect");
+        } else if (param_btn_answer->answer == 'C') {
+            gtk_style_context_add_class(context, "btn-answer-c-incorrect");
+        } else if (param_btn_answer->answer == 'D') {
+            gtk_style_context_add_class(context, "btn-answer-d-incorrect");
+        }
+        
         millionaire_window_gameplay_answer_incorrect(user_data);
     }
 
