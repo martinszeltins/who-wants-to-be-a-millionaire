@@ -4,6 +4,14 @@ window {
     background-repeat: no-repeat;
 }
 
+.lbl-lifeline-answer {
+    background-image: url("img/lifeline-answer.png");
+    min-width: 337px;
+    min-height: 157px;
+    padding: 0;
+    font-size: 20px;
+}
+
 /* Lifeline buttons */
 .btn-lifeline {
     background-color: transparent;

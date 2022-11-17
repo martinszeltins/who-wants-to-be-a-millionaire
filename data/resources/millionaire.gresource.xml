@@ -6,22 +6,23 @@
         <file>img/answer-a-green.png</file>
         <file>img/answer-a-red.png</file>
         <file>img/answer-a-yellow.png</file>
-        <file>img/answer-b-default.png</file>
-        <file>img/answer-b-green.png</file>
-        <file>img/answer-b-red.png</file>
-        <file>img/answer-b-yellow.png</file>
-        <file>img/answer-c-default.png</file>
-        <file>img/answer-c-green.png</file>
-        <file>img/answer-c-red.png</file>
-        <file>img/answer-c-yellow.png</file>
-        <file>img/answer-d-default.png</file>
-        <file>img/answer-d-green.png</file>
-        <file>img/answer-d-red.png</file>
-        <file>img/answer-d-yellow.png</file>
-        <file>img/btn-50-50.png</file>
-        <file>img/btn-audience.png</file>
-        <file>img/btn-call.png</file>
         <file>img/bg.png</file>
         <file>style.css</file>
+        <file>img/btn-call.png</file>
+        <file>img/btn-50-50.png</file>
+        <file>img/answer-c-red.png</file>
+        <file>img/answer-b-red.png</file>
+        <file>img/answer-d-red.png</file>
+        <file>img/btn-audience.png</file>
+        <file>img/answer-b-green.png</file>
+        <file>img/answer-c-green.png</file>
+        <file>img/answer-d-green.png</file>
+        <file>img/lifeline-answer.png</file>
+        <file>img/answer-c-yellow.png</file>
+        <file>img/answer-b-yellow.png</file>
+        <file>img/answer-d-yellow.png</file>
+        <file>img/answer-d-default.png</file>
+        <file>img/answer-c-default.png</file>
+        <file>img/answer-b-default.png</file>
     </gresource>
 </gresources>

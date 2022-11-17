@@ -13,7 +13,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[0].money_earned_if_answered, "$100,000");
     strcpy(questions[0].lifeline_fifty_fifty_hide[0], "A");
     strcpy(questions[0].lifeline_fifty_fifty_hide[1], "B");
-    strcpy(questions[0].lifeline_call_answer, "I know that Hamlet and Romeo are but Darren looks like it could be the one that is not.");
+    strcpy(questions[0].lifeline_call_answer, "I know that Hamlet and Romeo\n are but Darren looks like\n it could be the one that is not.");
     strcpy(questions[0].lifeline_audience_answer, "The audience has voted:\nA: 2%\nB: 7%\nC: 38%\nD: 53%");
 
     strcpy(questions[1].question, "What sort of animal is Walt Disney's Dumbo?");
@@ -25,7 +25,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[1].money_earned_if_answered, "$200,000");
     strcpy(questions[1].lifeline_fifty_fifty_hide[0], "A");
     strcpy(questions[1].lifeline_fifty_fifty_hide[1], "D");
-    strcpy(questions[1].lifeline_call_answer, "Dumbo was the Elephant, wasn't it?");
+    strcpy(questions[1].lifeline_call_answer, "Dumbo was the Elephant,\n wasn't it?");
     strcpy(questions[1].lifeline_audience_answer, "The audience has voted:\nA: 7%\nB: 3%\nC: 80%\nD: 10%");
 
     strcpy(questions[2].question, "What does the word loquacious mean?");
@@ -37,7 +37,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[2].money_earned_if_answered, "$300,000");
     strcpy(questions[2].lifeline_fifty_fifty_hide[0], "C");
     strcpy(questions[2].lifeline_fifty_fifty_hide[1], "D");
-    strcpy(questions[2].lifeline_call_answer, "Hmm, I don't know... But if I had to guess I would say chatty.");
+    strcpy(questions[2].lifeline_call_answer, "Hmm, I don't know... But\n if I had to guess I would\n say chatty.");
     strcpy(questions[2].lifeline_audience_answer, "The audience has voted:\nA: 3%\nB: 87%\nC: 4%\nD: 6%");
 
     strcpy(questions[3].question, "The Ancient Incan Ruins Of Machu Picchu Are In Which Country?");
@@ -49,7 +49,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[3].money_earned_if_answered, "$400,000");
     strcpy(questions[3].lifeline_fifty_fifty_hide[0], "C");
     strcpy(questions[3].lifeline_fifty_fifty_hide[1], "D");
-    strcpy(questions[3].lifeline_call_answer, "I saw this on Discovery channel - it's in Peru");
+    strcpy(questions[3].lifeline_call_answer, "I saw this on Discovery channel\n - it's in Peru.");
     strcpy(questions[3].lifeline_audience_answer, "The audience has voted:\nA: 51%\nB: 30%\nC: 13%\nD: 21%");
 
     strcpy(questions[4].question, "Construction of which of these famous landmarks was completed first?");
@@ -61,7 +61,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[4].money_earned_if_answered, "$500,000");
     strcpy(questions[4].lifeline_fifty_fifty_hide[0], "A");
     strcpy(questions[4].lifeline_fifty_fifty_hide[1], "B");
-    strcpy(questions[4].lifeline_call_answer, "To be honest, I really don't know. My wild guess is the Eiffel Tower.");
+    strcpy(questions[4].lifeline_call_answer, "To be honest, I really don't know.\n My wild guess is the Eiffel Tower.");
     strcpy(questions[4].lifeline_audience_answer, "The audience has voted:\nA: 9%\nB: 7%\nC: 24%\nD: 62%");
 
     strcpy(questions[5].question, "What is the Celsius equivalent of 77 degrees Fahrenheit?");
@@ -73,7 +73,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[5].money_earned_if_answered, "$600,000");
     strcpy(questions[5].lifeline_fifty_fifty_hide[0], "D");
     strcpy(questions[5].lifeline_fifty_fifty_hide[1], "B");
-    strcpy(questions[5].lifeline_call_answer, "I think that 100 F is about 30 in celsius. So I will say 15.");
+    strcpy(questions[5].lifeline_call_answer, "I think that 100 F is about 30 in\n celsius. So I will say 15.");
     strcpy(questions[5].lifeline_audience_answer, "The audience has voted:\nA: 11%\nB: 21%\nC: 59%\nD: 9%");
 
     strcpy(questions[6].question, "The word \"aristocracy\" literally means power in the hands of whom?");
@@ -85,7 +85,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[6].money_earned_if_answered, "$700,000");
     strcpy(questions[6].lifeline_fifty_fifty_hide[0], "B");
     strcpy(questions[6].lifeline_fifty_fifty_hide[1], "C");
-    strcpy(questions[6].lifeline_call_answer, "I know it's not the best. I think it's the few or the rich.");
+    strcpy(questions[6].lifeline_call_answer, "I know it's not the best. I think\n it's the few or the rich.");
     strcpy(questions[6].lifeline_audience_answer, "The audience has voted:\nA: 85%\nB: 3%\nC: 27%\nD: 16%");
 
     strcpy(questions[7].question, "A sports team playing in its own arena is said to have what type of advantage?");
@@ -109,7 +109,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[8].money_earned_if_answered, "$900,000");
     strcpy(questions[8].lifeline_fifty_fifty_hide[0], "B");
     strcpy(questions[8].lifeline_fifty_fifty_hide[1], "D");
-    strcpy(questions[8].lifeline_call_answer, "I don't know what Shuffleboard is but that would be my answer.");
+    strcpy(questions[8].lifeline_call_answer, "I don't know what Shuffleboard\n is but that would be my answer.");
     strcpy(questions[8].lifeline_audience_answer, "The audience has voted:\nA: 90%\nB: 2%\nC: 3%\nD: 5%");
 
     strcpy(questions[9].question, "A dermatologist is best suited to treat which of these medical conditions?");
@@ -121,7 +121,7 @@ struct question * millionaire_questions_get()
     strcpy(questions[9].money_earned_if_answered, "$1,000,000");
     strcpy(questions[9].lifeline_fifty_fifty_hide[0], "C");
     strcpy(questions[9].lifeline_fifty_fifty_hide[1], "A");
-    strcpy(questions[9].lifeline_call_answer, "It's definitely a heart murmur. Just kidding, I think derma means skin.");
+    strcpy(questions[9].lifeline_call_answer, "It's definitely a heart murmur.\n Just kidding, I think derma\n means skin.");
     strcpy(questions[9].lifeline_audience_answer, "The audience has voted:\nA: 19%\nB: 28%\nC: 14%\nD: 58%");
 
     return questions;
