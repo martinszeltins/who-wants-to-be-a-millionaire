@@ -40,17 +40,17 @@ struct question * millionaire_questions_get()
     strcpy(questions[2].lifeline_call_answer, "Hmm, I don't know... But if I had to guess I would say chatty.");
     strcpy(questions[2].lifeline_audience_answer, "The audience has voted:\nA: 3%\nB: 87%\nC: 4%\nD: 6%");
 
-    strcpy(questions[3].question, "What does the word loquacious mean?");
-    strcpy(questions[3].answers[0], "Angry");
-    strcpy(questions[3].answers[1], "Chatty");
-    strcpy(questions[3].answers[2], "Beautiful");
-    strcpy(questions[3].answers[3], "Shy");
-    strcpy(questions[3].correct_answer, "B");
+    strcpy(questions[3].question, "The Ancient Incan Ruins Of Machu Picchu Are In Which Country?");
+    strcpy(questions[3].answers[0], "Peru");
+    strcpy(questions[3].answers[1], "Argentina");
+    strcpy(questions[3].answers[2], "Chile");
+    strcpy(questions[3].answers[3], "Mexico");
+    strcpy(questions[3].correct_answer, "A");
     strcpy(questions[3].money_earned_if_answered, "$400,000");
     strcpy(questions[3].lifeline_fifty_fifty_hide[0], "C");
     strcpy(questions[3].lifeline_fifty_fifty_hide[1], "D");
-    strcpy(questions[3].lifeline_call_answer, "Hmm, I don't know... But if I had to guess I would say chatty.");
-    strcpy(questions[3].lifeline_audience_answer, "The audience has voted:\nA: 3%\nB: 87%\nC: 4%\nD: 6%");
+    strcpy(questions[3].lifeline_call_answer, "I saw this on Discovery channel - it's in Peru");
+    strcpy(questions[3].lifeline_audience_answer, "The audience has voted:\nA: 51%\nB: 30%\nC: 13%\nD: 21%");
 
     strcpy(questions[4].question, "Construction of which of these famous landmarks was completed first?");
     strcpy(questions[4].answers[0], "Empire State Building");

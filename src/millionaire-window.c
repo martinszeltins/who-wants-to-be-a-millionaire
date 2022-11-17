@@ -170,7 +170,7 @@ gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
             gtk_style_context_add_class(context, "btn-answer-d-correct");
         }
 
-        millionaire_window_gameplay_answer_correct(user_data);
+        window->timer = g_timeout_add(1000, millionaire_window_gameplay_answer_correct, user_data);
     } else {
         if (param_btn_answer->answer[0] == 'A') {
             gtk_style_context_add_class(context, "btn-answer-a-incorrect");
@@ -182,7 +182,7 @@ gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
             gtk_style_context_add_class(context, "btn-answer-d-incorrect");
         }
 
-        millionaire_window_gameplay_answer_incorrect(user_data);
+        window->timer = g_timeout_add(1000, millionaire_window_gameplay_answer_incorrect, user_data);
     }
 
     return TRUE;
@@ -190,13 +190,53 @@ gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
 
 gboolean millionaire_window_gameplay_answer_correct(gpointer user_data)
 {
-    g_print("millionaire_window_gameplay_answer_correct()");
+    struct ParamBtnAnswer * param_btn_answer = (struct ParamBtnAnswer *) user_data;
+
+    MillionaireWindow * window = MILLIONAIRE_WINDOW(param_btn_answer->window);
+    GtkStyleContext *   context_btn_answer_a = gtk_widget_get_style_context(GTK_WIDGET(window->btn_answer_a));
+    GtkStyleContext *   context_btn_answer_b = gtk_widget_get_style_context(GTK_WIDGET(window->btn_answer_b));
+    GtkStyleContext *   context_btn_answer_c = gtk_widget_get_style_context(GTK_WIDGET(window->btn_answer_c));
+    GtkStyleContext *   context_btn_answer_d = gtk_widget_get_style_context(GTK_WIDGET(window->btn_answer_d));
+
+    // Stop the timer
+    g_source_remove(window->timer);
+    window->timer = 0;
+
+    gtk_label_set_text(window->lbl_money, window->questions[window->current_question].money_earned_if_answered);
+
+    window->current_question++;
+    window->game_locked = FALSE;
+
+    gtk_label_set_text(window->lbl_question, window->questions[window->current_question].question);
+    gtk_label_set_text(window->lbl_answer_a, window->questions[window->current_question].answers[0]);
+    gtk_label_set_text(window->lbl_answer_b, window->questions[window->current_question].answers[1]);
+    gtk_label_set_text(window->lbl_answer_c, window->questions[window->current_question].answers[2]);
+    gtk_label_set_text(window->lbl_answer_d, window->questions[window->current_question].answers[3]);
+
+    gtk_style_context_remove_class(context_btn_answer_a, "btn-answer-a-correct");
+    gtk_style_context_remove_class(context_btn_answer_a, "btn-answer-a-incorrect");
+    gtk_style_context_remove_class(context_btn_answer_b, "btn-answer-b-correct");
+    gtk_style_context_remove_class(context_btn_answer_b, "btn-answer-b-incorrect");
+    gtk_style_context_remove_class(context_btn_answer_c, "btn-answer-c-correct");
+    gtk_style_context_remove_class(context_btn_answer_c, "btn-answer-c-incorrect");
+    gtk_style_context_remove_class(context_btn_answer_d, "btn-answer-d-correct");
+    gtk_style_context_remove_class(context_btn_answer_d, "btn-answer-d-incorrect");
+
+    g_print("millionaire_window_gameplay_answer_correct() moving on to the next question.....");
 
     return TRUE;
 }
 
 gboolean millionaire_window_gameplay_answer_incorrect(gpointer user_data)
 {
+    struct ParamBtnAnswer * param_btn_answer = (struct ParamBtnAnswer *) user_data;
+
+    MillionaireWindow * window = MILLIONAIRE_WINDOW(param_btn_answer->window);
+
+    // Stop the timer
+    g_source_remove(window->timer);
+    window->timer = 0;
+
     g_print("millionaire_window_gameplay_answer_incorrect()");
 
     return TRUE;
