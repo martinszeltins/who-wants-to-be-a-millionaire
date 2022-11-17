@@ -71,7 +71,7 @@ window {
     background-image: url("img/answer-a-default.png");
 }
 
-.btn-answer-a:hover,
+.btn-answer-a:hover:not(.btn-answer-a-correct):not(.btn-answer-a-incorrect),
 .btn-answer-a.btn-answer-pulse {
     background-image: url("img/answer-a-yellow.png");
 }
@@ -80,7 +80,7 @@ window {
     background-image: url("img/answer-b-default.png");
 }
 
-.btn-answer-b:hover,
+.btn-answer-b:hover:not(.btn-answer-b-correct):not(.btn-answer-b-incorrect),
 .btn-answer-b.btn-answer-pulse {
     background-image: url("img/answer-b-yellow.png");
 }
@@ -89,7 +89,7 @@ window {
     background-image: url("img/answer-c-default.png");
 }
 
-.btn-answer-c:hover,
+.btn-answer-c:hover:not(.btn-answer-c-correct):not(.btn-answer-c-incorrect),
 .btn-answer-c.btn-answer-pulse {
     background-image: url("img/answer-c-yellow.png");
 }
@@ -98,7 +98,7 @@ window {
     background-image: url("img/answer-d-default.png");
 }
 
-.btn-answer-d:hover,
+.btn-answer-d:hover:not(.btn-answer-d-correct):not(.btn-answer-d-incorrect),
 .btn-answer-d.btn-answer-pulse {
     background-image: url("img/answer-d-yellow.png");
 }
