@@ -59,14 +59,6 @@ window {
     filter: brightness(0.9);
 }
 
-.btn-answer-correct {
-    background-image: url("img/answer-a-green.png");
-}
-
-.btn-answer-incorrect {
-    background-image: url("img/answer-a-red.png");
-}
-
 .btn-answer label {
     font-size: 20px;
     padding-left: 90px;
@@ -109,6 +101,38 @@ window {
 .btn-answer-d:hover,
 .btn-answer-d.btn-answer-pulse {
     background-image: url("img/answer-d-yellow.png");
+}
+
+.btn-answer-a-correct {
+    background-image: url("img/answer-a-green.png");
+}
+
+.btn-answer-b-correct {
+    background-image: url("img/answer-b-green.png");
+}
+
+.btn-answer-c-correct {
+    background-image: url("img/answer-c-green.png");
+}
+
+.btn-answer-d-correct {
+    background-image: url("img/answer-d-green.png");
+}
+
+.btn-answer-a-incorrect {
+    background-image: url("img/answer-a-red.png");
+}
+
+.btn-answer-b-incorrect {
+    background-image: url("img/answer-b-red.png");
+}
+
+.btn-answer-c-incorrect {
+    background-image: url("img/answer-c-red.png");
+}
+
+.btn-answer-d-incorrect {
+    background-image: url("img/answer-d-red.png");
 }
 
 .btn-answer-pulse {

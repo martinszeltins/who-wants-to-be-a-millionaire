@@ -142,7 +142,7 @@ void millionaire_window_gameplay_answer(GtkWidget * widget, gpointer data)
     GtkStyleContext * context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_class(context, "btn-answer-pulse");
 
-    window->timer = g_timeout_add(2000, millionaire_window_gameplay_answer_check, param_btn_answer);
+    window->timer = g_timeout_add(1500, millionaire_window_gameplay_answer_check, param_btn_answer);
 }
 
 gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
@@ -159,28 +159,29 @@ gboolean millionaire_window_gameplay_answer_check(gpointer user_data)
     gtk_style_context_remove_class(context, "btn-answer-pulse");
 
     if (param_btn_answer->answer[0] == window->questions[window->current_question].correct_answer[0]) {
-        if (param_btn_answer->answer == 'A') {
+            if (param_btn_answer->answer[0] == 'A') {
             gtk_style_context_add_class(context, "btn-answer-a-correct");
-        } else if (param_btn_answer->answer == 'B') {
+        } else if (param_btn_answer->answer[0] == 'B') {
             gtk_style_context_add_class(context, "btn-answer-b-correct");
-        } else if (param_btn_answer->answer == 'C') {
+        } else if (param_btn_answer->answer[0] == 'C') {
             gtk_style_context_add_class(context, "btn-answer-c-correct");
-        } else if (param_btn_answer->answer == 'D') {
+        } else if (param_btn_answer->answer[0] == 'D') {
+            g_print("Correct D");
             gtk_style_context_add_class(context, "btn-answer-d-correct");
         }
 
         millionaire_window_gameplay_answer_correct(user_data);
     } else {
-        if (param_btn_answer->answer == 'A') {
+        if (param_btn_answer->answer[0] == 'A') {
             gtk_style_context_add_class(context, "btn-answer-a-incorrect");
-        } else if (param_btn_answer->answer == 'B') {
+        } else if (param_btn_answer->answer[0] == 'B') {
             gtk_style_context_add_class(context, "btn-answer-b-incorrect");
-        } else if (param_btn_answer->answer == 'C') {
+        } else if (param_btn_answer->answer[0] == 'C') {
             gtk_style_context_add_class(context, "btn-answer-c-incorrect");
-        } else if (param_btn_answer->answer == 'D') {
+        } else if (param_btn_answer->answer[0] == 'D') {
             gtk_style_context_add_class(context, "btn-answer-d-incorrect");
         }
-        
+
         millionaire_window_gameplay_answer_incorrect(user_data);
     }
 
