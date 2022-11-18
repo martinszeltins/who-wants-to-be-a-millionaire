@@ -22,6 +22,7 @@ struct _MillionaireWindow
     GtkLabel *           lbl_answer_b;
     GtkLabel *           lbl_answer_c;
     GtkLabel *           lbl_answer_d;
+    GtkLabel *           lbl_lifeline_answer;
 };
 
 struct ParamBtnAnswer {
@@ -52,6 +53,7 @@ static void millionaire_window_class_init (MillionaireWindowClass * klass)
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_b);
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_c);
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_d);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_lifeline_answer);
 }
 
 static void millionaire_window_init (MillionaireWindow * self)
@@ -85,6 +87,12 @@ static void millionaire_window_init (MillionaireWindow * self)
     param_answer_d->widget = GTK_WIDGET(self->btn_answer_d);
     strcpy(param_answer_d->answer, "D");
     g_signal_connect(self->btn_answer_d, "clicked", G_CALLBACK(millionaire_window_gameplay_answer), param_answer_d);
+
+    // Lifeline - Call
+    g_signal_connect(self->btn_call, "clicked", G_CALLBACK(millionaire_window_gameplay_lifeline_call), self);
+
+    // Lifeline - Audience
+    g_signal_connect(self->btn_audience, "clicked", G_CALLBACK(millionaire_window_gameplay_lifeline_audience), self);
 
     millionaire_window_gameplay_start(self);
 }
@@ -222,7 +230,7 @@ gboolean millionaire_window_gameplay_answer_correct(gpointer user_data)
     gtk_style_context_remove_class(context_btn_answer_d, "btn-answer-d-correct");
     gtk_style_context_remove_class(context_btn_answer_d, "btn-answer-d-incorrect");
 
-    g_print("millionaire_window_gameplay_answer_correct() moving on to the next question.....");
+    gtk_widget_set_visible(GTK_WIDGET(window->lbl_lifeline_answer), FALSE);
 
     return TRUE;
 }
@@ -260,7 +268,27 @@ gboolean millionaire_window_gameplay_answer_incorrect(gpointer user_data)
     gtk_style_context_remove_class(context_btn_answer_d, "btn-answer-d-correct");
     gtk_style_context_remove_class(context_btn_answer_d, "btn-answer-d-incorrect");
 
-    g_print("millionaire_window_gameplay_answer_correct() moving on to the next question.....");
+    gtk_widget_set_visible(GTK_WIDGET(window->lbl_lifeline_answer), FALSE);
+
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_call), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_fifty_fifty), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_audience), TRUE);
 
     return TRUE;
+}
+
+void millionaire_window_gameplay_lifeline_call(GtkWidget * widget, MillionaireWindow * window)
+{
+    gtk_label_set_text(window->lbl_lifeline_answer, window->questions[window->current_question].lifeline_call_answer);
+
+    gtk_widget_set_visible(widget, FALSE);
+    gtk_widget_set_visible(GTK_WIDGET(window->lbl_lifeline_answer), TRUE);
+}
+
+void millionaire_window_gameplay_lifeline_audience(GtkWidget * widget, MillionaireWindow * window)
+{
+    gtk_label_set_text(window->lbl_lifeline_answer, window->questions[window->current_question].lifeline_audience_answer);
+
+    gtk_widget_set_visible(widget, FALSE);
+    gtk_widget_set_visible(GTK_WIDGET(window->lbl_lifeline_answer), TRUE);
 }
