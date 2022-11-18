@@ -120,7 +120,7 @@ void millionaire_window_create_and_show (GApplication * app)
 void millionaire_window_gameplay_start(MillionaireWindow * self)
 {
     self->timer = 0;
-    self->current_question = 8;
+    self->current_question = 0;
     self->game_locked = FALSE;
 
     struct question * questions = millionaire_questions_get();
@@ -296,6 +296,8 @@ gboolean millionaire_window_gameplay_answer_incorrect(gpointer user_data)
 
 void millionaire_window_gameplay_lifeline_call(GtkWidget * widget, MillionaireWindow * window)
 {
+    if (window->game_locked == TRUE) return;
+
     gtk_label_set_text(window->lbl_lifeline_answer, window->questions[window->current_question].lifeline_call_answer);
 
     gtk_widget_set_visible(widget, FALSE);
@@ -304,6 +306,8 @@ void millionaire_window_gameplay_lifeline_call(GtkWidget * widget, MillionaireWi
 
 void millionaire_window_gameplay_lifeline_audience(GtkWidget * widget, MillionaireWindow * window)
 {
+    if (window->game_locked == TRUE) return;
+
     gtk_label_set_text(window->lbl_lifeline_answer, window->questions[window->current_question].lifeline_audience_answer);
 
     gtk_widget_set_visible(widget, FALSE);
@@ -312,6 +316,8 @@ void millionaire_window_gameplay_lifeline_audience(GtkWidget * widget, Millionai
 
 void millionaire_window_gameplay_lifeline_fifty_fifty(GtkWidget * widget, MillionaireWindow * window)
 {
+    if (window->game_locked == TRUE) return;
+    
     // Hide the first answer
     if (window->questions[window->current_question].lifeline_fifty_fifty_hide[0][0] == 'A') {
         gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_a), FALSE);
