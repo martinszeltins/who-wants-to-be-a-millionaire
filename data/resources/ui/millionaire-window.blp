@@ -33,6 +33,17 @@ template MillionaireWindow : Adw.ApplicationWindow {
                 }
             }
 
+            Label lbl_info {
+                label: "Congratulations! You have won $1 million, don't spend it all at once.";
+                justify: center;
+                visible: false;
+                styles ["lbl-info"]
+
+                layout {
+                    transform: "translate(150, 200)";
+                }
+            }
+
             Button btn_fifty_fifty {
                 can-focus: false;
 

@@ -9,6 +9,8 @@
         <file>img/bg.png</file>
         <file>style.css</file>
         <file>img/btn-call.png</file>
+        <file>img/info-box.png</file>
+        <file>img/bg-sparks.png</file>
         <file>img/btn-50-50.png</file>
         <file>img/answer-c-red.png</file>
         <file>img/answer-b-red.png</file>
@@ -24,5 +26,6 @@
         <file>img/answer-d-default.png</file>
         <file>img/answer-c-default.png</file>
         <file>img/answer-b-default.png</file>
+        <file>img/info-box-highlighted.png</file>
     </gresource>
 </gresources>

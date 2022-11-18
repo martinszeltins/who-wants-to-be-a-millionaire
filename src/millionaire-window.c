@@ -23,6 +23,7 @@ struct _MillionaireWindow
     GtkLabel *           lbl_answer_c;
     GtkLabel *           lbl_answer_d;
     GtkLabel *           lbl_lifeline_answer;
+    GtkLabel *           lbl_info;
 };
 
 struct ParamBtnAnswer {
@@ -54,6 +55,7 @@ static void millionaire_window_class_init (MillionaireWindowClass * klass)
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_c);
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_answer_d);
     gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_lifeline_answer);
+    gtk_widget_class_bind_template_child (widget_class, MillionaireWindow, lbl_info);
 }
 
 static void millionaire_window_init (MillionaireWindow * self)
@@ -118,7 +120,7 @@ void millionaire_window_create_and_show (GApplication * app)
 void millionaire_window_gameplay_start(MillionaireWindow * self)
 {
     self->timer = 0;
-    self->current_question = 0;
+    self->current_question = 8;
     self->game_locked = FALSE;
 
     struct question * questions = millionaire_questions_get();
@@ -214,6 +216,10 @@ gboolean millionaire_window_gameplay_answer_correct(gpointer user_data)
     window->timer = 0;
 
     gtk_label_set_text(window->lbl_money, window->questions[window->current_question].money_earned_if_answered);
+
+    if (window->current_question == 9) {
+        return millionaire_window_gameplay_win_game(user_data);
+    }
 
     window->current_question++;
     window->game_locked = FALSE;
@@ -330,4 +336,23 @@ void millionaire_window_gameplay_lifeline_fifty_fifty(GtkWidget * widget, Millio
 
     // Hide the lifeline itself
     gtk_widget_set_visible(widget, FALSE);
+}
+
+gboolean millionaire_window_gameplay_win_game(gpointer user_data)
+{
+    g_print("win");
+
+    struct ParamBtnAnswer * param_btn_answer = (struct ParamBtnAnswer *) user_data;
+
+    MillionaireWindow * window = MILLIONAIRE_WINDOW(param_btn_answer->window);
+
+    GtkStyleContext * context_window = gtk_widget_get_style_context(GTK_WIDGET(window));
+    GtkStyleContext * context_lbl_info = gtk_widget_get_style_context(GTK_WIDGET(window->lbl_info));
+    gtk_style_context_add_class(context_window, "bg-sparks");
+    gtk_style_context_add_class(context_lbl_info, "highlight");
+
+    gtk_label_set_text(window->lbl_info, "Congratulations! You have won $1 million, don't spend it all at once.");
+    gtk_widget_set_visible(GTK_WIDGET(window->lbl_info), TRUE);
+
+    return TRUE;
 }

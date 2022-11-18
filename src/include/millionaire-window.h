@@ -28,5 +28,6 @@ gboolean millionaire_window_gameplay_answer_incorrect(gpointer user_data);
 void     millionaire_window_gameplay_lifeline_call(GtkWidget * widget, MillionaireWindow * window);
 void     millionaire_window_gameplay_lifeline_audience(GtkWidget * widget, MillionaireWindow * window);
 void     millionaire_window_gameplay_lifeline_fifty_fifty(GtkWidget * widget, MillionaireWindow * window);
+gboolean millionaire_window_gameplay_win_game(gpointer user_data);
 
 G_END_DECLS

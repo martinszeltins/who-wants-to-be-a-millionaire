@@ -4,6 +4,22 @@ window {
     background-repeat: no-repeat;
 }
 
+.bg-sparks {
+    background-image: url("img/bg-sparks.png");
+}
+
+.lbl-info {
+    background-image: url("img/info-box.png");
+    min-width: 1005px;
+    min-height: 98px;
+    padding: 0;
+    font-size: 30px;
+}
+
+.lbl-info.highlight {
+    background-image: url("img/info-box-highlighted.png");
+}
+
 .lbl-lifeline-answer {
     background-image: url("img/lifeline-answer.png");
     min-width: 337px;
