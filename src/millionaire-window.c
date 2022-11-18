@@ -94,6 +94,9 @@ static void millionaire_window_init (MillionaireWindow * self)
     // Lifeline - Audience
     g_signal_connect(self->btn_audience, "clicked", G_CALLBACK(millionaire_window_gameplay_lifeline_audience), self);
 
+    // Lifeline - 50 / 50
+    g_signal_connect(self->btn_fifty_fifty, "clicked", G_CALLBACK(millionaire_window_gameplay_lifeline_fifty_fifty), self);
+
     millionaire_window_gameplay_start(self);
 }
 
@@ -231,6 +234,10 @@ gboolean millionaire_window_gameplay_answer_correct(gpointer user_data)
     gtk_style_context_remove_class(context_btn_answer_d, "btn-answer-d-incorrect");
 
     gtk_widget_set_visible(GTK_WIDGET(window->lbl_lifeline_answer), FALSE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_a), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_b), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_c), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_d), TRUE);
 
     return TRUE;
 }
@@ -273,6 +280,10 @@ gboolean millionaire_window_gameplay_answer_incorrect(gpointer user_data)
     gtk_widget_set_visible(GTK_WIDGET(window->btn_call), TRUE);
     gtk_widget_set_visible(GTK_WIDGET(window->btn_fifty_fifty), TRUE);
     gtk_widget_set_visible(GTK_WIDGET(window->btn_audience), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_a), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_b), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_c), TRUE);
+    gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_d), TRUE);
 
     return TRUE;
 }
@@ -291,4 +302,32 @@ void millionaire_window_gameplay_lifeline_audience(GtkWidget * widget, Millionai
 
     gtk_widget_set_visible(widget, FALSE);
     gtk_widget_set_visible(GTK_WIDGET(window->lbl_lifeline_answer), TRUE);
+}
+
+void millionaire_window_gameplay_lifeline_fifty_fifty(GtkWidget * widget, MillionaireWindow * window)
+{
+    // Hide the first answer
+    if (window->questions[window->current_question].lifeline_fifty_fifty_hide[0][0] == 'A') {
+        gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_a), FALSE);
+    } else if (window->questions[window->current_question].lifeline_fifty_fifty_hide[0][0] == 'B') {
+        gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_b), FALSE);
+    } else if (window->questions[window->current_question].lifeline_fifty_fifty_hide[0][0] == 'C') {
+        gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_c), FALSE);
+    } else if (window->questions[window->current_question].lifeline_fifty_fifty_hide[0][0] == 'D') {
+        gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_d), FALSE);
+    }
+
+    // Hide the second answer
+    if (window->questions[window->current_question].lifeline_fifty_fifty_hide[1][0] == 'A') {
+        gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_a), FALSE);
+    } else if (window->questions[window->current_question].lifeline_fifty_fifty_hide[1][0] == 'B') {
+        gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_b), FALSE);
+    } else if (window->questions[window->current_question].lifeline_fifty_fifty_hide[1][0] == 'C') {
+        gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_c), FALSE);
+    } else if (window->questions[window->current_question].lifeline_fifty_fifty_hide[1][0] == 'D') {
+        gtk_widget_set_visible(GTK_WIDGET(window->btn_answer_d), FALSE);
+    }
+
+    // Hide the lifeline itself
+    gtk_widget_set_visible(widget, FALSE);
 }
