@@ -9,4 +9,4 @@ The codebase could be much improved by moving the main game logic into its own G
 The game also uses GTK Fixed widget and a fixed window size. This could also be improved by moving to a more responsive layout like GTK Grid.
 
 **Screenshot**:
-<img src="https://i.ibb.co/r3jzZtn/millionairescreshot.png" />
+<img src="https://raw.githubusercontent.com/martinszeltins/who-wants-to-be-a-millionaire/master/screenshot.jpg" />
