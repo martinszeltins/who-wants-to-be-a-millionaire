@@ -29,8 +29,10 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "dir",
-                    "url" : "."
+                    "type" : "git",
+                    "url" : "https://github.com/martinszeltins/who-wants-to-be-a-millionaire",
+                    "tag" : "v1.0.0",
+                    "commit" : "14808d94aff025b6491100a724184c335fde426f"
                 }
             ]
         }
