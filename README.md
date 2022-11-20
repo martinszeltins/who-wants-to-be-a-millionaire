@@ -1,4 +1,10 @@
-<div style="display: flex; justify-content: center;"><img src="https://raw.githubusercontent.com/martinszeltins/who-wants-to-be-a-millionaire/master/data/icons/hicolor/scalable/apps/lv.martinsz.millionaire.svg" width="100px" /></div> <h1 style="text-align: center;">Who Wants To Be a Millionaire</h1>
+<p align="center">
+    <img src="https://raw.githubusercontent.com/martinszeltins/who-wants-to-be-a-millionaire/master/data/icons/hicolor/scalable/apps/lv.martinsz.millionaire.svg" width="100px" alt="Who Wants To Be a Millionaire" />
+</p>
+
+<p align="center">
+    <h1 style="text-align: center;">Who Wants To Be a Millionaire</h1>
+</p>
 
 I am open to pull requests if anyone wants to improve on this game.
 
