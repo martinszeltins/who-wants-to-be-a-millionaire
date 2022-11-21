@@ -10,12 +10,6 @@
 	<project_license>GPL-2.0-or-later</project_license>
 	<description>
 	  <p>Test your knowledge to see if you can answer all questions and win $1 million. Have fun!</p>
-      <p>Created using these technologies</p>
-      <ul>
-        <li>GTK 4</li>
-        <li>Libadwaita</li>
-        <li>C</li>
-      </ul>
 	</description>
     <requires>
       <display_length compare="ge">small</display_length>
