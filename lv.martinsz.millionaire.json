@@ -31,8 +31,8 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/martinszeltins/who-wants-to-be-a-millionaire",
-                    "tag" : "v1.0.1",
-                    "commit" : "71c7ff8416edcc847af906c55a98ef11bc33f0c7"
+                    "tag" : "v1.0.2",
+                    "commit" : "032e0762f0cb3d2e1bf09d27af18999c71d40d56"
                 }
             ]
         }
