@@ -4,6 +4,9 @@
     <name>Who Wants To Be a Millionaire</name>
     <summary>Answer all questions to win $1 million.</summary>
     <developer_name>Martins Zeltins</developer_name>
+    <developer id="lv.martinsz">
+      <name>Martins Zeltins</name>
+    </developer>
     <launchable type="desktop-id">lv.martinsz.millionaire.desktop</launchable>
     <update_contact>martins.zeltins@gmail.com</update_contact>
 	<metadata_license>CC0-1.0</metadata_license>
@@ -11,16 +14,13 @@
 	<description>
 	  <p>Test your knowledge to see if you can answer all questions and win $1 million. Have fun!</p>
 	</description>
-    <requires>
-      <display_length compare="ge">small</display_length>
-    </requires>
     <recommends>
-      <display_length compare="ge">small</display_length>
+      <display_length compare="ge">1298</display_length>
     </recommends>
     <content_rating type="oars-1.1"/>
     <screenshots>
-      <screenshot>
-        <captionption>Screenshot of the game</captionption>
+      <screenshot type="default">
+        <caption>Screenshot of the game</caption>
         <image type="source">https://raw.githubusercontent.com/martinszeltins/who-wants-to-be-a-millionaire/master/data/resources/screenshots/screenshot1.png</image>
       </screenshot>
       <screenshot>
@@ -33,10 +33,8 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://github.com/martinszeltins/who-wants-to-be-a-millionaire/</url>
-  <url type="bugtracker">https://github.com/martinszeltins/who-wants-to-be-a-millionaire/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc</url>
-  <categories>
-    <category>Game</category>
-  </categories>
+  <url type="bugtracker">https://github.com/martinszeltins/who-wants-to-be-a-millionaire/issues</url>
+  <url type="vcs-browser">https://github.com/martinszeltins/who-wants-to-be-a-millionaire/</url>
   <releases>
     <release version="1.0.0" date="2022-11-20">
       <description>
