@@ -4,5 +4,6 @@ Exec=millionaire
 Icon=lv.martinsz.millionaire
 Terminal=false
 Type=Application
-Categories=GNOME;GTK;Game;
+Categories=Game;
+Keywords=Millionaire;Game;GNOME;GTK;
 StartupNotify=true
