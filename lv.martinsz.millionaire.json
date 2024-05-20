@@ -1,7 +1,7 @@
 {
     "app-id" : "lv.martinsz.millionaire",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "43",
+    "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",
     "command" : "millionaire",
     "finish-args" : [
